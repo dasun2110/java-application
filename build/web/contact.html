@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+       <link rel="icon" href="pho/icon.png"/> <title>Contact with BT Constructions</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script>
+            
+           function Check()
+    {
+       document.getElementById('t1').innerHTML="Your Full Name :";
+document.getElementById('t2').innerHTML="Your Email Address :";
+document.getElementById('t3').innerHTML="Subject :";
+document.getElementById('t4').innerHTML="Your Inquire :<p style='font-size: 16px;'>(maximum 100 words)</p>";
+document.getElementById('t').innerHTML="";
+document.getElementById('p1').innerHTML="";
+
+        if( document.f1.Name.value.length==0 ) { document.getElementById('t1').innerHTML="<p style='color:orangered;'>*Your Full Name :</p>";}
+        if( document.f1.Email.value.length==0 ) { document.getElementById('t2').innerHTML="<p style='color:orangered;'>*Your Email Address :</p>";}        
+        if( document.f1.Subject.value.length==0 ) { document.getElementById('t3').innerHTML="<p style='color:orangered;'>*Subject :</p>";}
+        
+        var Message = document.getElementById("Message");
+        
+         if (Message.value.replace(/ /g,'').length) {} else { document.getElementById('t4').innerHTML="<p style='color:orangered;'>*Your Inquire :<p style='font-size: 16px;'>(maximum 100 words)</p> </p>";document.getElementById('t').innerHTML="Please Enter ALL * fields !"; return false;}
+        var tell = Message.value.replace(/ /g,'').length;
+        if ( document.f1.Name.value.length==0 || document.f1.Email.value.length==0 || document.f1.Subject.value.length==0 )
+        {document.getElementById('t').innerHTML="Please Enter ALL * fields !"; return false;} 
+       else
+       {
+           var x = document.getElementById('email').value;
+                            var atpos = x.indexOf("@");
+                            var dotpos = x.lastIndexOf(".");
+                            if(atpos< 1 || dotpos<atpos+2 || dotpos+2>=x.length) 
+                             {document.getElementById("p1").innerHTML = "*NOT a valid e-mail address !";
+                                                    return false;}
+            if (tell > 1250){ document.getElementById('t4').innerHTML="<p style='color:orangered;'>Your Inquire :<p style='font-size: 16px;'>(maximum 100 words)</p></p>"; document.getElementById('t11').innerHTML="<p style='color:orangered;'>Word limit Exceeded!</p>"; return false;
+           }else { 
+                    var val = confirm("Your Message is about to be sent. Once sent, your won't be able to edit your message. Please confirm.");
+       if (val==true)return true; else return false;}
+       }
+    
+    }
+            
+        </script>
+    </head>
+    <body background="pho/12.jpg">
+        <style>
+            div.text, div.email{
+                color:black;
+                font-family:Cooper Black;
+                font-size: 20px;
+                
+                 }  
+     input[type=text], select, textarea, [type=email] {
+    width: 100%;
+    padding: 12px;
+    background-color:white ; 
+    border: 3px solid saddlebrown;
+    border-radius: 6px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
+}
+div.transbox {
+  margin: 30px;
+  background-color: lightgoldenrodyellow;
+  border: 1px solid black;
+  opacity: 0.6890;
+  color:black;
+  font-weight:bold;
+  filter: alpha(opacity=60); /* For IE8 and earlier */
+}
+input[type=submit] {
+    background-color:orange;
+    color: black;
+    padding: 12px 20px;
+   border:1px solid darkred;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+input[type=submit]:hover {
+    background-color: orangered;
+    border:3px solid darkred;
+    color:white; 
+}
+
+.container {
+    border-radius: 5px;
+    background-color:sandybrown;
+    padding: 20px;}   
+     
+    div.background {
+  background: url(pho/b_1.jpg) repeat;
+  border: 2px solid black;
+}       
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+        </style>   
+
+ 
+            
+        <div class="transbox"><div class="text"> <div class="container"><div class="background">
+                 <table border="0">
+                    
+                    <tbody>
+                        <tr>
+                            <td colspan="2" align="right" width="1200px" style="background-color:sandybrown;"> <center> <lable style="color:black;font-family:Eras Demi ITC;font-size:28px;"> Contact Us </lable></center><br></td>
+                            <td width="90px" align="center"style=" background-color:sandybrown;"> <a href="myhome2.html" class="home" title="Home" ><img src="pho/lg123.png"width="100px"heigth="100px" ></a> </td>
+                            <td width="100px" align="center"style="background-color:sandybrown;"> <a href="reg.html" class="home" title="Registration" ><img src="pho/rg.png"width="100px"heigth="100px" ></a></td>
+                        </tr>
+                    </tbody>
+                    </table>
+                        
+
+ <form method="POST" name="f1" action="Contacting">
+            <table border="0" cellspacing="4" cellpadding="2" align="center">
+                
+                <tbody>
+                    <tr><td id="t" align="center" style="color:orangered;" colspan="2"></td></tr>
+                    <tr>
+                        <td align="right" id="t1">
+                             Your Full Name :
+                        </td>
+                        <td><input type="text" name="Name" value=""  />
+                        </td>
+                    </tr>
+                     <tr><td id="p1" align="center" style="color:orangered;" colspan="2"></td></tr>
+                    <tr>
+                        <td align="right" id="t2">
+                            Your Email Address :
+                        </td>
+                        <td><input type="email" name="Email" value="" id="email" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="right" id="t3">
+                            Subject :
+                        </td>
+                        <td>
+                            <input type="text" name="Subject" value=""  />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="right" id="t4">
+                            Your Inquire :<p style="font-size: 16px;">(maximum 100 words)</p>
+                        </td>
+                        <td><textarea id="Message" name="Message" rows="6" cols="30" />
+                            </textarea><p id="t11"></p></td>
+                    </tr>
+            
+                <tr align="right">
+                        <td  colspan ="2">
+                            <input onClick="return(Check());" type="submit" value="Send" />
+                        </td>
+                    </tr>
+            
+                    <tr>
+                        <td colspan="2" align="center">
+                        <img src="pho/logo2.png" width="180" height="55" alt="logo2" style="border-radius: 15px;" />
+                        </td>
+                    </tr>
+
+             </table>
+                    </form>
+                    </div></div></div></div>
+          
+            </body>
+</html>

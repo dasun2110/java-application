@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Login Here</title>
+        <script>
+            
+            function check1()
+            {
+                document.getElementById("p1").innerHTML = ""; document.getElementById("p2").innerHTML = "";
+                  if( document.login.E_Mail.value.length==0 && document.login.Password.value.length==0)
+                     {alert("Please Enter your registered E-Mail and Password !"); return false;} 
+                   else
+                   {
+                        if( document.login.E_Mail.value.length==0) {document.getElementById("p1").innerHTML = "*Please Enter your E-Mail !"; return false;}
+                       
+                       
+                       else
+                       {
+                           var x = document.getElementById('email').value;
+                            var atpos = x.indexOf("@");
+                            var dotpos = x.lastIndexOf(".");
+                            if(atpos< 1 || dotpos<atpos+2 || dotpos+2>=x.length) 
+                             {document.getElementById("p1").innerHTML = "*NOT a valid e-mail address !";
+                                                    return false;}
+                            else{
+                                if( document.login.Password.value.length==0) {document.getElementById("p2").innerHTML = "*Please enter your Password !";
+                                                    return false;}
+                                else 
+                                return true;}
+                       }
+                   } 
+        
+            }
+            
+            
+        </script>    
+        
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <style>
+div.background {
+  background: url(pho/b_1.jpg) repeat;
+  border: 2px solid black;
+  margin: 60px;
+}
+
+div.transbox {
+ margin: 20px;
+  background-color: #ffffff;
+  border: 1px solid orangered;
+  opacity: 0.7;
+  color:black;
+  font-weight:bold;
+  filter: alpha(opacity=60); /* For IE8 and earlier */
+}
+
+div.transbox p {
+  margin: 5%;
+  font-weight: bold;
+  color: black;
+}
+
+.submit{
+    padding: 10px;
+                cursor: pointer;
+                font-size: 17px;
+                background-color:lightsalmon;
+                border:1px solid brown; color:brown; 
+                width: 100px;
+                height: 40px;
+            }
+            
+            .submit:hover{background-color:orangered; border: 2px solid brown; color:black;}
+.a1{padding:10px; cursor: pointer;
+                font-size: 20px; text-decoration: none;
+                background-color:lightslategray;
+                border:1px solid black; color:white; 
+            }  
+.a2{padding:10px; cursor: pointer;
+                font-size: 20px; text-decoration: none;
+                background-color:lightseagreen;
+                border:1px solid black; color:lightsalmon; 
+            } 
+.aa:hover{background-color:grey; border: 2px solid black; color:white;}
+
+input {
+    align-self: center;
+     width: 400px;
+    height: 30px;
+}
+
+
+
+div {
+    border-radius: 5px;
+    
+}
+</style>
+<body background="pho/12.jpg">
+    <a href="myhome2.html" class="home" title="Home" style="float:right;" > <img src="pho/lg123.png"width="75px"heigth="75px" ></a> 
+   <br><br>
+    <div class="background"><br>
+            
+            
+              <div class="transbox ">
+                  
+            <form name="login" action="Check" method="POST" style=" padding-bottom:20px;">
+                            
+            <table align="center"  height="200px;">
+                
+            <tr>
+                    <td border="0" align="center" style="color:red"   >
+            <center>
+                        
+                        <table border="0" cellpadding="3" height="200px;">
+                            
+                            <tbody>
+                                <tr align="center">
+                                    <td colspan="2">
+                                       <h2 style="color:brown ">SIGN IN</h2>     
+                                    </td>
+                                </tr>
+                                <tr><td style="color: red;" id="p1" align="center" colspan="2"></td></tr>
+                                <tr>
+                                    <td width="300px" align="right">  
+                                     <h3 style="color:black" >User Email:</h3>
+                                    </td>
+                                    <td  width="600px">
+                                        <div class="input">  <input type="email" name="E_Mail" id="email" title="Enter Your Email Address Here."/>    </div>
+                                    </td>
+                                </tr>
+                                <tr><td style="color: red;" id="p2" align="center" colspan="2"></td></tr>
+                                <tr>
+                                    <td  width="300px"align="right">
+                                             <h3 style="color:black">User Password:</h3>
+                                    </td>
+                                    <td  width="600px">
+                                         <input type="password" name="Password" title="Enter valid Password Here."/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2" align="center" height="70px">
+                                                         <input onClick="return(check1());" type="submit" class="submit submit1" value="Login Now" style="padding:7.5px;" />  
+                                    </td>
+ </tr>
+</tbody>
+        </table>
+</center>
+ </td> </tr></table></form>    
+              </div></div>
+   <center>
+   
+    <img src="pho/logo2.png" width="360" height="100" alt="logo2" style="border-radius: 10px;"/>
+    
+</center>
+    
+</body>
+        </html>
